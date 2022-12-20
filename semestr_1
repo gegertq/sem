@@ -1,0 +1,29 @@
+def check(spis):
+    if len(spis) !=4:
+        return False
+    for i in spis:
+        if not type(i) is int and not type(i) is float:
+            return False
+    return True
+
+def summa(spis):
+    if not check(spis):
+        return 'error'
+    return[spis[0]+spis[2],spis[1]+spis[3]]
+
+def raznost(spis):
+    if not check(spis):
+        return 'error'
+    return [spis[0]-spis[2],spis[1]-spis[3]]
+
+def multi(spis):
+    if not check(spis):
+        return 'error'
+    return [(spis[0]*spis[2]-spis[1]*spis[3]),(spis[0]*spis[3]+spis[1]*spis[2])]
+
+def divide(spis):
+    if not check(spis):
+        return 'error'
+    if spis[2]==0 or spis[3]==0:
+        return 'error'
+    return[round(((spis[0]*spis[2]+spis[1]*spis[3])/(spis[2]**2+spis[3]**2)),4),round(((spis[2]*spis[1]-spis[0]*spis[3])/(spis[2]**2+spis[3]**2)),4)]
